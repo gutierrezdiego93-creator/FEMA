@@ -47,6 +47,7 @@ app.post('/api/auth', async (req, res) => {
     const data = await r.json();
 
     if (!r.ok) {
+      console.error('Fracttal auth error:', JSON.stringify(data));
       return res.status(401).json({ error: 'Credenciales incorrectas', detail: data });
     }
 
